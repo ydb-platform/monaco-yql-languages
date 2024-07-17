@@ -1,0 +1,51 @@
+{
+  "name": "@ydb-platform/monaco-yql-languages",
+  "version": "1.0.0",
+  "description": "YQL languages for the Monaco Editor, based on monaco-languages.",
+  "author": "YDB",
+  "license": "Apache-2.0",
+  "module": "./build/monaco.contribution.js",
+  "types": "./build/monaco.contribution.d.ts",
+  "scripts": {
+    "prepare": "husky",
+    "build": "npm run build:clean && npm run build:compile",
+    "build:clean": "rimraf build",
+    "build:compile": "tsc",
+    "lint": "npm run lint:code && npm run lint:other",
+    "lint:code": "eslint --ext .js,.jsx,.ts,.tsx --quiet .",
+    "lint:other": "npm run prettier -- --check ",
+    "prettier": "prettier \"**/*.{md,yaml,yml}\"",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ydb-platform/monaco-yql-languages"
+  },
+  "devDependencies": {
+    "@gravity-ui/eslint-config": "^3.1.1",
+    "@gravity-ui/prettier-config": "^1.1.0",
+    "@gravity-ui/stylelint-config": "^4.0.1",
+    "@gravity-ui/tsconfig": "^1.0.0",
+    "eslint": "^8.10.0",
+    "husky": "^9.0.11",
+    "monaco-editor": "^0.32.1",
+    "prettier": "^3.2.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^5.4.2"
+  },
+  "peerDependencies": {
+    "monaco-editor": ">=0.27.0"
+  },
+  "nano-staged": {
+    "*.{scss}": [
+      "stylelint --fix --quiet"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix --quiet"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}

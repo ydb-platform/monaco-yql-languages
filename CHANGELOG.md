@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.0...v1.0.1) (2024-07-22)
+
+
+### Bug Fixes
+
+* change repository name ([#7](https://github.com/ydb-platform/monaco-yql-languages/issues/7)) ([12dede2](https://github.com/ydb-platform/monaco-yql-languages/commit/12dede2afff61037a0fc6ff81730491ef0eacddd))
+* repo name ([#5](https://github.com/ydb-platform/monaco-yql-languages/issues/5)) ([76272e7](https://github.com/ydb-platform/monaco-yql-languages/commit/76272e7238bb1216a3d91138f9feca2a1d6a8512))
+* **YQL:** reorder keywords ([#6](https://github.com/ydb-platform/monaco-yql-languages/issues/6)) ([852d03d](https://github.com/ydb-platform/monaco-yql-languages/commit/852d03d1ab98088b9e67a1a1580dba196da853b2))
+
 ## 1.0.0 (2024-07-22)
 
 

@@ -1,5 +1,5 @@
 {
-  "name": "@ydb-platform/monaco-yql-languages",
+  "name": "monaco-yql-languages",
   "version": "1.0.0",
   "description": "YQL languages for the Monaco Editor, based on monaco-languages.",
   "author": "YDB",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ydb-platform/monaco-yql-languages"
+    "url": "git@github.com:ydb-platform/monaco-yql-languages.git"
   },
   "devDependencies": {
     "@gravity-ui/eslint-config": "^3.1.1",

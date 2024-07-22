@@ -1,4 +1,4 @@
-# @ydb-platform/monaco-yql-languages &middot; [![npm package](https://img.shields.io/npm/v/monaco-yql-languages)](https://www.npmjs.com/package/monaco-yql-languages) [![CI](https://img.shields.io/github/actions/workflow/status/ydb-platform/monaco-yql-languages/.github/workflows/ci.yml?label=CI&logo=github)](https://github.com/ydb-platform/monaco-yql-languages/actions/workflows/ci.yml?query=branch:main)
+# monaco-yql-languages &middot; [![npm package](https://img.shields.io/npm/v/monaco-yql-languages)](https://www.npmjs.com/package/monaco-yql-languages) [![CI](https://img.shields.io/github/actions/workflow/status/ydb-platform/monaco-yql-languages/.github/workflows/ci.yml?label=CI&logo=github)](https://github.com/ydb-platform/monaco-yql-languages/actions/workflows/ci.yml?query=branch:main)
 
 ## Install
 

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "YQL languages for the Monaco Editor, based on monaco-languages.",
   "author": "YDB",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "module": "./build/monaco.contribution.js",
   "types": "./build/monaco.contribution.d.ts",
   "scripts": {

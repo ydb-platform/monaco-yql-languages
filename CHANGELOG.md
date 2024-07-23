@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.5...v1.0.6) (2024-07-23)
+
+
+### Bug Fixes
+
+* package folder ([#20](https://github.com/ydb-platform/monaco-yql-languages/issues/20)) ([f275c20](https://github.com/ydb-platform/monaco-yql-languages/commit/f275c204f1f1e42a6683e9a8a8caeeea5b5ceaf4))
+
 ## [1.0.5](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.4...v1.0.5) (2024-07-23)
 
 

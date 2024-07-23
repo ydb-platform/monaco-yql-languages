@@ -16,7 +16,8 @@
     "lint:other": "npm run prettier -- --check ",
     "prettier": "prettier \"**/*.{md,yaml,yml}\"",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run lint && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",

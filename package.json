@@ -6,6 +6,9 @@
   "license": "MIT",
   "module": "./build/monaco.contribution.js",
   "types": "./build/monaco.contribution.d.ts",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "prepare": "husky",
     "build": "npm run build:clean && npm run build:compile",
@@ -21,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ydb-platform/monaco-yql-languages.git"
+    "url": "git+ssh://git@github.com/ydb-platform/monaco-yql-languages.git"
   },
   "devDependencies": {
     "@gravity-ui/eslint-config": "^3.1.1",

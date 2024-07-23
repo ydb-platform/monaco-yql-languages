@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.2...v1.0.3) (2024-07-23)
+
+
+### Bug Fixes
+
+* add script for tests ([#14](https://github.com/ydb-platform/monaco-yql-languages/issues/14)) ([d75deb6](https://github.com/ydb-platform/monaco-yql-languages/commit/d75deb60232f388aa331842e7576cf5cfb65f247))
+* fix github actions ([#13](https://github.com/ydb-platform/monaco-yql-languages/issues/13)) ([5c88dae](https://github.com/ydb-platform/monaco-yql-languages/commit/5c88daed8a89901e2875eec364e0d757f4350e1a))
+
 ## [1.0.2](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.1...v1.0.2) (2024-07-23)
 
 

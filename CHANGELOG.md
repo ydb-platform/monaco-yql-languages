@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.4...v1.0.5) (2024-07-23)
+
+
+### Bug Fixes
+
+* tsconfig.json ([#18](https://github.com/ydb-platform/monaco-yql-languages/issues/18)) ([fc2d4be](https://github.com/ydb-platform/monaco-yql-languages/commit/fc2d4be9e81ba8a6ecff17dd9a63c0f131e65182))
+
 ## [1.0.4](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.3...v1.0.4) (2024-07-23)
 
 

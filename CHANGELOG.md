@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.6...v1.1.0) (2024-09-03)
+
+
+### Features
+
+* **YQL:** support ListTop and ListTopSort builtin functions ([#22](https://github.com/ydb-platform/monaco-yql-languages/issues/22)) ([80388f7](https://github.com/ydb-platform/monaco-yql-languages/commit/80388f7b894d4d9912393caa136147c99b80a3d2))
+
 ## [1.0.6](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.5...v1.0.6) (2024-07-23)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.1.0...v1.1.1) (2024-09-05)
+
+
+### Bug Fixes
+
+* do not auto close quotes inside strings and comments ([#24](https://github.com/ydb-platform/monaco-yql-languages/issues/24)) ([f4097b1](https://github.com/ydb-platform/monaco-yql-languages/commit/f4097b11340d457c76c7ecaf8ba36c64ce57eba9))
+
 ## [1.1.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.0.6...v1.1.0) (2024-09-03)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "monaco-yql-languages",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "YQL languages for the Monaco Editor, based on monaco-languages.",
   "author": "YDB",
   "license": "MIT",

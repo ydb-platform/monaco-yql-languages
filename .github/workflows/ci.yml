@@ -42,3 +42,5 @@ jobs:
           cache: 'npm'
       - name: Install Packages
         run: npm ci
+      - name: Tests
+        run: npm run test

@@ -6,7 +6,8 @@
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "outDir": "build"
+    "outDir": "build",
+    "lib": ["ESNext", "DOM"]
   },
   "include": ["src"]
 }

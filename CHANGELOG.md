@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.2.1...v1.3.0) (2025-02-06)
+
+
+### Features
+
+* **YQL:** add logic to generate suggestions for yql ([#34](https://github.com/ydb-platform/monaco-yql-languages/issues/34)) ([83277ee](https://github.com/ydb-platform/monaco-yql-languages/commit/83277ee17fab737490d210d3b0d714f276857d4f))
+
 ## [1.2.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.2.0...v1.2.1) (2024-12-23)
 
 

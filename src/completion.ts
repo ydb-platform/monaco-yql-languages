@@ -5,6 +5,7 @@ import type {
     editor,
     languages,
 } from './fillers/monaco-editor-core';
+import {suggestionIndexToWeight} from './utils';
 
 export type CompletionListProvider = {
     (content: string, offset: number, signal?: AbortSignal | null): Promise<string[]>;
@@ -12,7 +13,10 @@ export type CompletionListProvider = {
 
 const allUpperCaseRe = new RegExp('^[$A-Z_\\s]+$');
 
-export function provideCompletionItems(getCompletionList: CompletionListProvider) {
+export function provideCompletionItems(
+    getCompletionList: CompletionListProvider,
+    preserveOrder?: boolean,
+) {
     return (
         model: editor.ITextModel,
         position: Position,
@@ -69,7 +73,15 @@ export function provideCompletionItems(getCompletionList: CompletionListProvider
                         range,
                     });
                 }
-                return {suggestions, incomplete: suggestions.length > 0};
+                return {
+                    suggestions: preserveOrder
+                        ? suggestions.map((item, index) => ({
+                              ...item,
+                              sortText: suggestionIndexToWeight(index),
+                          }))
+                        : suggestions,
+                    incomplete: suggestions.length > 0,
+                };
             },
         );
     };

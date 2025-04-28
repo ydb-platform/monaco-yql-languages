@@ -12,9 +12,9 @@ import {
     isVariable,
     removeBackticks,
     removeStringDuplicates,
-    suggestionIndexToWeight,
     wrapStringToBackticks,
 } from './utils';
+import {suggestionIndexToWeight} from '../../utils';
 
 export async function generateSimpleTypesSuggestion(
     rangeToInsertSuggestion: monaco.IRange,

@@ -57,7 +57,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'aa',
             },
             {
                 label: {label: 'col2', description: undefined},
@@ -65,7 +65,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'ab',
             },
         ]);
     });
@@ -89,7 +89,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'aa',
             },
             {
                 label: {label: 'table2.col2', description: undefined},
@@ -97,7 +97,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'ab',
             },
         ]);
     });
@@ -118,7 +118,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'aa',
             },
         ]);
     });
@@ -140,7 +140,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'aa',
             },
         ]);
     });
@@ -165,7 +165,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'aa',
             },
             {
                 label: {label: 'table2.col2', description: undefined},
@@ -173,14 +173,14 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'ab',
             },
             {
                 label: 'table1.col1, table2.col2',
                 insertText: 'table1.col1, table2.col2',
                 kind: 1,
                 range: mockRange,
-                sortText: '0',
+                sortText: 'a',
             },
         ]);
     });
@@ -204,7 +204,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'aa',
             },
             {
                 label: {label: 'col1', description: undefined},
@@ -212,7 +212,7 @@ describe('generateColumnsSuggestion', () => {
                 kind: 1,
                 detail: 'Column',
                 range: mockRange,
-                sortText: '00',
+                sortText: 'ab',
             },
         ]);
     });
@@ -256,7 +256,7 @@ describe('generateEntitiesSuggestion', () => {
                     endColumn: 1,
                 },
                 command: undefined,
-                sortText: '00',
+                sortText: 'aa',
             },
             {
                 label: 'entity2/',
@@ -271,7 +271,7 @@ describe('generateEntitiesSuggestion', () => {
                     endColumn: 1,
                 },
                 command: {id: 'editor.action.triggerSuggest', title: ''},
-                sortText: '00',
+                sortText: 'ab',
             },
         ]);
     });
@@ -295,7 +295,7 @@ describe('generateEntitiesSuggestion', () => {
                     endColumn: 1,
                 },
                 command: undefined,
-                sortText: '00',
+                sortText: 'aa',
             },
             {
                 label: 'entity2/',
@@ -310,7 +310,7 @@ describe('generateEntitiesSuggestion', () => {
                     endColumn: 1,
                 },
                 command: {id: 'editor.action.triggerSuggest', title: ''},
-                sortText: '00',
+                sortText: 'ab',
             },
         ]);
     });
@@ -321,6 +321,7 @@ describe('generateEntitiesSuggestion', () => {
             {value: 'entity2', isDir: false},
         ];
         const suggestions = await generateEntitiesSuggestion(mockRange, entities);
+
         expect(suggestions).toEqual([
             {
                 label: 'entity1/',
@@ -335,7 +336,7 @@ describe('generateEntitiesSuggestion', () => {
                     endColumn: 1,
                 },
                 command: {id: 'editor.action.triggerSuggest', title: ''},
-                sortText: '00',
+                sortText: 'aa',
             },
             {
                 label: 'entity2',
@@ -350,7 +351,7 @@ describe('generateEntitiesSuggestion', () => {
                     endColumn: 1,
                 },
                 command: undefined,
-                sortText: '00',
+                sortText: 'ab',
             },
         ]);
     });

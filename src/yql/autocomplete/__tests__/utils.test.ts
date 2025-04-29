@@ -1,4 +1,5 @@
-import {suggestionIndexToWeight, wrapStringToBackticks} from '../utils';
+import {suggestionIndexToWeight} from '../../../utils';
+import {wrapStringToBackticks} from '../utils';
 
 describe('wrapStringToBackticks', () => {
     it('should return the same string if it already starts and ends with backticks', () => {

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.3.0...v1.4.0) (2025-04-29)
+
+
+### Features
+
+* preserve backend suggestion order ([#36](https://github.com/ydb-platform/monaco-yql-languages/issues/36)) ([69ac2f4](https://github.com/ydb-platform/monaco-yql-languages/commit/69ac2f4bd244be50b002baee4f0f3a06e5881935))
+
 ## [1.3.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.2.1...v1.3.0) (2025-02-06)
 
 

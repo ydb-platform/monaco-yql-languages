@@ -107,6 +107,8 @@ export function provideCompletionItems(
                         filterText: allUpperCaseRe.test(label) ? label.toLowerCase() : label,
                         kind,
                         insertText: labelAsSnippet ?? suggest,
+                        //4 - languages.CompletionItemInsertTextRule.InsertAsSnippet
+                        //0 - languages.CompletionItemInsertTextRule.None
                         insertTextRules: labelAsSnippet ? 4 : 0,
                         command:
                             label.endsWith('/') || label.endsWith('.`') || label.endsWith('::')

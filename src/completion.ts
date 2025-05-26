@@ -5,6 +5,7 @@ import type {
     editor,
     languages,
 } from './fillers/monaco-editor-core';
+
 import {suggestionIndexToWeight} from './utils';
 
 export type CompletionListProvider = {
@@ -12,6 +13,31 @@ export type CompletionListProvider = {
 };
 
 const allUpperCaseRe = new RegExp('^[$A-Z_\\s]+$');
+
+type YqlCompletionType =
+    | 'Keyword'
+    | 'PragmaName'
+    | 'TypeName'
+    | 'FunctionName'
+    | 'HintName'
+    | 'FolderName'
+    | 'TableName'
+    | 'ClusterName'
+    | 'UnknownName';
+
+const YqlCompletionTypeToMonacoKind: Record<YqlCompletionType, languages.CompletionItemKind> = {
+    Keyword: 17,
+    PragmaName: 8,
+    TypeName: 24,
+    FunctionName: 1,
+    HintName: 18,
+    FolderName: 23,
+    TableName: 18,
+    ClusterName: 8,
+    UnknownName: 18,
+};
+
+export type CompletionData = string | {type: YqlCompletionType; text: string; shift?: number};
 
 export function provideCompletionItems(
     getCompletionList: CompletionListProvider,
@@ -38,9 +64,25 @@ export function provideCompletionItems(
             return {suggestions: []};
         }
         return getCompletionList(model.getValue(), model.getOffsetAt(position), signal).then(
-            async (data: string[]) => {
+            async (data: CompletionData[]) => {
                 const suggestions: languages.CompletionItem[] = [];
-                for (const label of data) {
+                for (const item of data) {
+                    let labelAsSnippet = '';
+                    //languages.CompletionItemKind.Text
+                    let kind = 18;
+                    let label: string;
+                    if (typeof item === 'object') {
+                        const {text, type, shift} = item;
+                        label = text;
+                        kind = YqlCompletionTypeToMonacoKind[type];
+                        if (shift) {
+                            const pos = text.length - shift;
+                            labelAsSnippet = text.slice(0, pos) + '$0' + text.slice(pos);
+                        }
+                    } else {
+                        label = item;
+                    }
+
                     const suggest =
                         label.length > 1
                             ? label.slice(0, -1).replace(/[/[]/g, '\\\\$&') + label.slice(-1)
@@ -63,8 +105,11 @@ export function provideCompletionItems(
                     suggestions.push({
                         label,
                         filterText: allUpperCaseRe.test(label) ? label.toLowerCase() : label,
-                        kind: 18, // languages.CompletionItemKind.Text,
-                        insertText: suggest,
+                        kind,
+                        insertText: labelAsSnippet || suggest,
+                        //4 - languages.CompletionItemInsertTextRule.InsertAsSnippet
+                        //0 - languages.CompletionItemInsertTextRule.None
+                        insertTextRules: labelAsSnippet ? 4 : 0,
                         command:
                             label.endsWith('/') || label.endsWith('.`') || label.endsWith('::')
                                 ? {id: 'editor.action.triggerSuggest', title: ''}

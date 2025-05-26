@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.4.0...v1.5.0) (2025-05-26)
+
+
+### Features
+
+* support new yql completion response ([#38](https://github.com/ydb-platform/monaco-yql-languages/issues/38)) ([0114d9d](https://github.com/ydb-platform/monaco-yql-languages/commit/0114d9d2d0266004482e27e41ea22ae1fdb2564b))
+
 ## [1.4.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.3.0...v1.4.0) (2025-04-29)
 
 

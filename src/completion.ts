@@ -23,6 +23,7 @@ type YqlCompletionType =
     | 'FolderName'
     | 'TableName'
     | 'ClusterName'
+    | 'BindingName'
     | 'UnknownName';
 
 const YqlCompletionTypeToMonacoKind: Record<YqlCompletionType, languages.CompletionItemKind> = {
@@ -34,6 +35,7 @@ const YqlCompletionTypeToMonacoKind: Record<YqlCompletionType, languages.Complet
     FolderName: 23,
     TableName: 18,
     ClusterName: 8,
+    BindingName: 4,
     UnknownName: 18,
 };
 

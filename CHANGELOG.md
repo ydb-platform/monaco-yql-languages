@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.5.0...v1.6.0) (2025-06-02)
+
+
+### Features
+
+* add BindingName completion type ([#40](https://github.com/ydb-platform/monaco-yql-languages/issues/40)) ([0daef45](https://github.com/ydb-platform/monaco-yql-languages/commit/0daef45e3e03d1c6eae148939f4a53507483879e))
+
 ## [1.5.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.4.0...v1.5.0) (2025-05-26)
 
 

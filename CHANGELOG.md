@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.6.0...v1.7.0) (2025-06-02)
+
+
+### Features
+
+* set default completion kind ([#42](https://github.com/ydb-platform/monaco-yql-languages/issues/42)) ([e019c6f](https://github.com/ydb-platform/monaco-yql-languages/commit/e019c6f35c3503da59696267cd51f510e8bdd656))
+
 ## [1.6.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.5.0...v1.6.0) (2025-06-02)
 
 

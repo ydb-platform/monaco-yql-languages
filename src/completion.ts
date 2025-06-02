@@ -76,7 +76,7 @@ export function provideCompletionItems(
                     if (typeof item === 'object') {
                         const {text, type, shift} = item;
                         label = text;
-                        kind = YqlCompletionTypeToMonacoKind[type];
+                        kind = YqlCompletionTypeToMonacoKind[type] ?? 18;
                         if (shift) {
                             const pos = text.length - shift;
                             labelAsSnippet = text.slice(0, pos) + '$0' + text.slice(pos);

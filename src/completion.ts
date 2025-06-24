@@ -12,8 +12,6 @@ export type CompletionListProvider = {
     (content: string, offset: number, signal?: AbortSignal | null): Promise<string[]>;
 };
 
-const allUpperCaseRe = new RegExp('^[$A-Z_\\s]+$');
-
 type YqlCompletionType =
     | 'Keyword'
     | 'PragmaName'
@@ -106,12 +104,11 @@ export function provideCompletionItems(
                     }
                     suggestions.push({
                         label,
-                        filterText: allUpperCaseRe.test(label) ? label.toLowerCase() : label,
+                        filterText: label.toLowerCase(),
                         kind,
                         insertText: labelAsSnippet || suggest,
                         //4 - languages.CompletionItemInsertTextRule.InsertAsSnippet
-                        //0 - languages.CompletionItemInsertTextRule.None
-                        insertTextRules: labelAsSnippet ? 4 : 0,
+                        insertTextRules: labelAsSnippet ? 4 : undefined,
                         command:
                             label.endsWith('/') || label.endsWith('.`') || label.endsWith('::')
                                 ? {id: 'editor.action.triggerSuggest', title: ''}
@@ -151,7 +148,7 @@ export function getCompletionItemsProvider(
                 for (const label of completions[name as keyof CompletionLists] as string[]) {
                     suggestions.push({
                         label,
-                        filterText: allUpperCaseRe.test(label) ? label.toLowerCase() : label,
+                        filterText: label.toLowerCase(),
                         insertText: label,
                         kind: Number(value),
                         range: {startLineNumber: 1, startColumn: 1, endLineNumber: 1, endColumn: 1},

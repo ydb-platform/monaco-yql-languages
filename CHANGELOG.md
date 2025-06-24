@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.7.0...v1.8.0) (2025-06-24)
+
+
+### Features
+
+* filterText should always to lowercase ([#44](https://github.com/ydb-platform/monaco-yql-languages/issues/44)) ([861dc3f](https://github.com/ydb-platform/monaco-yql-languages/commit/861dc3fcc1925d5fcfea738b5994572201c223c4))
+
 ## [1.7.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.6.0...v1.7.0) (2025-06-02)
 
 

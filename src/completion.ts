@@ -42,6 +42,7 @@ export type CompletionData = string | {type: YqlCompletionType; text: string; sh
 export function provideCompletionItems(
     getCompletionList: CompletionListProvider,
     preserveOrder?: boolean,
+    getFilterText: (text: string) => string = (text) => text.toLowerCase(),
 ) {
     return (
         model: editor.ITextModel,
@@ -104,7 +105,7 @@ export function provideCompletionItems(
                     }
                     suggestions.push({
                         label,
-                        filterText: label.toLowerCase(),
+                        filterText: getFilterText(label),
                         kind,
                         insertText: labelAsSnippet || suggest,
                         //4 - languages.CompletionItemInsertTextRule.InsertAsSnippet

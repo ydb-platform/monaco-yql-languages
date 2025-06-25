@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.8.0...v1.9.0) (2025-06-25)
+
+
+### Features
+
+* add setting to get filter text ([#46](https://github.com/ydb-platform/monaco-yql-languages/issues/46)) ([402eae5](https://github.com/ydb-platform/monaco-yql-languages/commit/402eae58cddffd8817ccf25d715b94aa16aa5255))
+
 ## [1.8.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.7.0...v1.8.0) (2025-06-24)
 
 

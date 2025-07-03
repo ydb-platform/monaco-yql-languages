@@ -37,7 +37,9 @@ const YqlCompletionTypeToMonacoKind: Record<YqlCompletionType, languages.Complet
     UnknownName: 18,
 };
 
-export type CompletionData = string | {type: YqlCompletionType; text: string; shift?: number};
+export type CompletionData =
+    | string
+    | {type: YqlCompletionType; text: string; shift?: number; filterText?: string};
 
 export function provideCompletionItems(
     getCompletionList: CompletionListProvider,
@@ -72,8 +74,13 @@ export function provideCompletionItems(
                     //languages.CompletionItemKind.Text
                     let kind = 18;
                     let label: string;
+                    let serverFilterText = '';
                     if (typeof item === 'object') {
-                        const {text, type, shift} = item;
+                        const {text, type, shift, filterText} = item;
+                        if (filterText) {
+                            serverFilterText = filterText;
+                        }
+
                         label = text;
                         kind = YqlCompletionTypeToMonacoKind[type] ?? 18;
                         if (shift) {
@@ -105,7 +112,7 @@ export function provideCompletionItems(
                     }
                     suggestions.push({
                         label,
-                        filterText: getFilterText(label),
+                        filterText: serverFilterText || getFilterText(label),
                         kind,
                         insertText: labelAsSnippet || suggest,
                         //4 - languages.CompletionItemInsertTextRule.InsertAsSnippet

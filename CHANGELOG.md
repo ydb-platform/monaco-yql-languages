@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.9.0...v1.10.0) (2025-07-03)
+
+
+### Features
+
+* use server filterText if possible ([#48](https://github.com/ydb-platform/monaco-yql-languages/issues/48)) ([63eebeb](https://github.com/ydb-platform/monaco-yql-languages/commit/63eebeb036f9cf38ea9d3ec4e523e58f63d938da))
+
 ## [1.9.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.8.0...v1.9.0) (2025-06-25)
 
 

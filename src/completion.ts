@@ -39,7 +39,13 @@ const YqlCompletionTypeToMonacoKind: Record<YqlCompletionType, languages.Complet
 
 export type CompletionData =
     | string
-    | {type: YqlCompletionType; text: string; shift?: number; filterText?: string};
+    | {
+          type: YqlCompletionType;
+          text: string;
+          shift?: number;
+          documentation?: languages.CompletionItem['documentation'];
+          filterText?: string;
+      };
 
 export function provideCompletionItems(
     getCompletionList: CompletionListProvider,
@@ -75,8 +81,9 @@ export function provideCompletionItems(
                     let kind = 18;
                     let label: string;
                     let serverFilterText = '';
+                    let serverDocumentation: languages.CompletionItem['documentation'];
                     if (typeof item === 'object') {
-                        const {text, type, shift, filterText} = item;
+                        const {text, type, shift, filterText, documentation} = item;
                         if (filterText) {
                             serverFilterText = filterText;
                         }
@@ -87,6 +94,7 @@ export function provideCompletionItems(
                             const pos = text.length - shift;
                             labelAsSnippet = text.slice(0, pos) + '$0' + text.slice(pos);
                         }
+                        serverDocumentation = documentation;
                     } else {
                         label = item;
                     }
@@ -123,6 +131,7 @@ export function provideCompletionItems(
                                 : undefined,
                         //@ts-ignore
                         range,
+                        documentation: serverDocumentation,
                     });
                 }
                 return {

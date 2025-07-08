@@ -45,6 +45,7 @@ export type CompletionData =
           text: string;
           shift?: number;
           documentation?: string;
+          detail?: string;
           filterText?: string;
       };
 
@@ -83,8 +84,16 @@ export function provideCompletionItems(
                     let label: string;
                     let serverFilterText = '';
                     let serverDocumentation: IMarkdownString | undefined;
+                    let serverDetail: string | undefined;
                     if (typeof item === 'object') {
-                        const {text, type, shift, filterText, documentation} = item;
+                        const {
+                            text,
+                            type,
+                            shift,
+                            filterText,
+                            documentation,
+                            detail = 'See details',
+                        } = item;
                         if (filterText) {
                             serverFilterText = filterText;
                         }
@@ -97,6 +106,8 @@ export function provideCompletionItems(
                         }
                         if (documentation) {
                             serverDocumentation = {value: documentation};
+
+                            serverDetail = detail;
                         }
                     } else {
                         label = item;
@@ -135,6 +146,7 @@ export function provideCompletionItems(
                         //@ts-ignore
                         range,
                         documentation: serverDocumentation,
+                        detail: serverDetail,
                     });
                 }
                 return {

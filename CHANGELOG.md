@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.11.1...v1.12.0) (2025-07-08)
+
+
+### Features
+
+* support detail from server ([#54](https://github.com/ydb-platform/monaco-yql-languages/issues/54)) ([ae2bc71](https://github.com/ydb-platform/monaco-yql-languages/commit/ae2bc71130c7f7604b6b48d7781afb32d4d8d06d))
+
 ## [1.11.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.11.0...v1.11.1) (2025-07-08)
 
 

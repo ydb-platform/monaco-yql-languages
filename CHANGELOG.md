@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.11.0...v1.11.1) (2025-07-08)
+
+
+### Bug Fixes
+
+* map server docs to IMarkdownString ([#52](https://github.com/ydb-platform/monaco-yql-languages/issues/52)) ([d962bde](https://github.com/ydb-platform/monaco-yql-languages/commit/d962bdec362cedf983ae311d2023775e317ab192))
+
 ## [1.11.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.10.0...v1.11.0) (2025-07-07)
 
 

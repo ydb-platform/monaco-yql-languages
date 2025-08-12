@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.12.0...v1.12.1) (2025-08-12)
+
+
+### Bug Fixes
+
+* should use shift for command list calculation ([#56](https://github.com/ydb-platform/monaco-yql-languages/issues/56)) ([31647de](https://github.com/ydb-platform/monaco-yql-languages/commit/31647de53279cddcde26a33f0a864414fedf43fc))
+
 ## [1.12.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.11.1...v1.12.0) (2025-07-08)
 
 

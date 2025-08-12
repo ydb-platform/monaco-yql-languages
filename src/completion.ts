@@ -82,6 +82,7 @@ export function provideCompletionItems(
                     //languages.CompletionItemKind.Text
                     let kind = 18;
                     let label: string;
+                    let beforeCursorPart: string;
                     let serverFilterText = '';
                     let serverDocumentation: IMarkdownString | undefined;
                     let serverDetail: string | undefined;
@@ -99,10 +100,12 @@ export function provideCompletionItems(
                         }
 
                         label = text;
+                        beforeCursorPart = text;
                         kind = YqlCompletionTypeToMonacoKind[type] ?? 18;
                         if (shift) {
                             const pos = text.length - shift;
                             labelAsSnippet = text.slice(0, pos) + '$0' + text.slice(pos);
+                            beforeCursorPart = text.slice(0, pos);
                         }
                         if (documentation) {
                             serverDocumentation = {value: documentation};
@@ -111,6 +114,7 @@ export function provideCompletionItems(
                         }
                     } else {
                         label = item;
+                        beforeCursorPart = item;
                     }
 
                     const suggest =
@@ -140,7 +144,9 @@ export function provideCompletionItems(
                         //4 - languages.CompletionItemInsertTextRule.InsertAsSnippet
                         insertTextRules: labelAsSnippet ? 4 : undefined,
                         command:
-                            label.endsWith('/') || label.endsWith('.`') || label.endsWith('::')
+                            beforeCursorPart.endsWith('/') ||
+                            beforeCursorPart.endsWith('.`') ||
+                            beforeCursorPart.endsWith('::')
                                 ? {id: 'editor.action.triggerSuggest', title: ''}
                                 : undefined,
                         //@ts-ignore

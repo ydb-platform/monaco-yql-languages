@@ -1,0 +1,59 @@
+{
+  "tokenizer": {
+    "root": [
+      {
+        "include": "@whitespace"
+      },
+      ["(#.*)", "comment"],
+      [
+        "(set_package_version|override_library|declare|library|package|return|lambda|import|export|quote|block|let)",
+        "keyword"
+      ],
+      ["\\b(world)\\b", "variable"],
+      ["([A-Za-z_\\-0-9]+!)", "string.tablepath"],
+      ["([A-Z][A-Za-z_\\-0-9]*)", "support.function"],
+      ["(\u0027[A-Za-z_\\-0-9]+\\.[A-Za-z_\\-0-9]+)", "support.function"],
+      ["(\u0027[A-Za-z_\\-0-9]+)", "number"],
+      ["\\b([a-z_0-9][A-Za-z_\\-0-9]*)\\b", "identifier"],
+      ["(\\\"[^\\\"\\n]*\\\")", "string"],
+      ["(\\@\\@(.|\\n)*\\@\\@)", "string"]
+    ],
+    "whitespace": [
+      ["(\\s+)", "white"],
+      ["\\@\\@", "string", "@stringLiteral"]
+    ],
+    "stringLiteral": [
+      [
+        "#py",
+        {
+          "nextEmbedded": "python",
+          "goBack": 3,
+          "next": "@embedded",
+          "token": "string.python"
+        }
+      ],
+      [
+        "\\\/\\\/js",
+        {
+          "nextEmbedded": "javascript",
+          "goBack": 4,
+          "next": "@embedded",
+          "token": "string.js"
+        }
+      ],
+      ["[^\\@\\@]", "string"],
+      ["\\@\\@", "string", "@pop"],
+      ["[\\@\\@]", "string"]
+    ],
+    "embedded": [
+      [
+        "([^@]|^)([@]{4})*[@]{2}([@]([^@]|$)|[^@]|$)",
+        {
+          "nextEmbedded": "@pop",
+          "next": "@pop",
+          "token": "@rematch"
+        }
+      ]
+    ]
+  }
+}

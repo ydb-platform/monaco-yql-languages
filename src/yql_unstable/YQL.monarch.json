@@ -1,0 +1,83 @@
+{
+  "tokenizer": {
+    "root": [
+      {
+        "include": "@whitespace"
+      },
+      ["(((\\\/\\*(.|\\n)*?\\*\\\/)|(\\-\\-[^\\n\\r]*(\\r\\n?|\\n|$))))", "comment"],
+      [
+        "\\b(([a-z]|[A-Z]|_)([a-z]|[A-Z]|_|[0-9])*\\:\\:([a-z]|[A-Z]|_)([a-z]|[A-Z]|_|[0-9])*)\\b",
+        "support.function"
+      ],
+      ["\\b(([a-z]|[A-Z]|_)([a-z]|[A-Z]|_|[0-9])*)(?=\\()\\b", "support.function"],
+      ["\\b(([a-z]|[A-Z]|_)([a-z]|[A-Z]|_|[0-9])*)(?=\\\u003C)\\b", "keyword.type"],
+      [
+        "\\b(pgpg_brin_minmax_multi_summary|pganycompatiblemultirange|pgpg_brin_bloom_summary|pganycompatiblenonarray|pganycompatiblerange|pganycompatiblearray|pglanguage_handler|pgtable_am_handler|pgindex_am_handler|_pgint8multirange|_pgint4multirange|_pgdatemultirange|pgpg_dependencies|_pgtstzmultirange|_pgnummultirange|pgdatemultirange|pgpg_ddl_command|pgint4multirange|_pgtxid_snapshot|pgtstzmultirange|pgint8multirange|_pgregdictionary|pganycompatible|pgevent_trigger|pgnummultirange|_pgtsmultirange|_pgpg_attribute|pganymultirange|_pgregprocedure|_pgregcollation|pgregdictionary|pgtxid_snapshot|_pgregnamespace|pgpg_ndistinct|_pgregoperator|pgregcollation|pgregprocedure|pgpg_attribute|_pgpg_snapshot|pgtsmultirange|pgregnamespace|pgpg_node_tree|_pgtimestamptz|pgregoperator|pgpg_mcv_list|pgtimestamptz|pgtsm_handler|TzTimestamp64|_pgint2vector|pganynonarray|pgpg_snapshot|pgfdw_handler|_pgtimestamp|_pgtstzrange|pgint2vector|_pgdaterange|_pgregconfig|_pggtsvector|TzDatetime64|_pgrefcursor|pganyelement|_pgint4range|JsonDocument|_pgint8range|_pgoidvector|_pgregclass|_pgtsvector|pgint8range|pgint4range|pgtstzrange|_pgmacaddr8|pggtsvector|pgdaterange|Timestamp64|TzTimestamp|_pgnumrange|pgtimestamp|_pginterval|_pgjsonpath|pgrefcursor|_pgpg_class|pgregconfig|pgoidvector|_pgpg_proc|_pgpg_type|pganyrange|_pgpolygon|_pgnumeric|pganyarray|TzDatetime|Interval64|_pgmacaddr|pgnumrange|_pgcstring|_pgregoper|pgtsvector|_pgregproc|pgmacaddr8|_pgregrole|_pgregtype|pgregclass|_pgvarchar|pgpg_class|Datetime64|pgjsonpath|pginternal|_pgaclitem|_pgtsquery|_pgtsrange|pginterval|Timestamp|pgpg_type|_pgbpchar|_pgtimetz|_pgpg_lsn|pgregoper|pgregrole|EmptyDict|pgmacaddr|pgaclitem|EmptyList|pgunknown|pgregtype|_pgcircle|_pgfloat4|pgtrigger|_pgfloat8|_pgvarbit|pganyenum|pgnumeric|pgvarchar|_pgrecord|pgtsrange|pgpolygon|pgtsquery|pgcstring|pgpg_proc|pgregproc|TzDate32|pgpg_lsn|pgcircle|pgbpchar|_pgpoint|pgrecord|Datetime|_pgjsonb|Interval|pgfloat4|pgfloat8|_pgmoney|pgtimetz|_pgbytea|pgvarbit|DyNumber|pgbytea|_pgint8|_pglseg|_pgxid8|_pgpath|_pgline|_pguuid|_pgbool|Generic|pgjsonb|_pgjson|_pgchar|_pgtime|_pgname|_pgtext|_pgcidr|pgmoney|_pgdate|_pginet|_pgint2|pgpoint|_pgint4|_pgxid|pgtext|pguuid|pgname|pglseg|pgline|pgjson|pgint8|pgint4|pgint2|pginet|pgdate|pgcidr|String|pgchar|TzDate|pgbool|Uint16|Uint32|_pgxml|Uint64|pgxid8|_pgtid|_pgoid|_pgcid|_pgbox|_pgbit|pgpath|Double|pgvoid|Date32|pgtime|Int16|pgtid|pgxid|Uint8|pgxml|pgany|pgbit|pgbox|pgcid|pgoid|Float|Int64|Int32|Yson|Int8|Json|Unit|Utf8|Uuid|Void|Date|Bool)\\b",
+        "keyword.type"
+      ],
+      [
+        "\\b(CURRENT_TIMESTAMP|MATCH_RECOGNIZE|UNCONDITIONAL|AUTOINCREMENT|EMPTY_ACTION|MILLISECONDS|MICROSECONDS|CURRENT_DATE|CURRENT_TIME|REPLICATION|INCREMENTAL|NANOSECONDS|CONDITIONAL|TRANSACTION|TABLESAMPLE|JSON_EXISTS|CHANGEFEED|DEFERRABLE|JSON_QUERY|REPEATABLE|PRIVILEGES|CONSTRAINT|CLASSIFIER|REFERENCES|COLLECTION|ATTRIBUTES|JSON_VALUE|ASYMMETRIC|TABLESTORE|UNMATCHED|PRECEDING|TEMPORARY|BERNOULLI|EXCLUSION|PARTITION|SYMMETRIC|EXCLUSIVE|DIRECTORY|UNBOUNDED|STREAMING|INTERSECT|INCREMENT|INITIALLY|ENCRYPTED|IMMEDIATE|SAVEPOINT|FOLLOWING|WATERMARK|RETURNING|DATABASE|PARALLEL|OPTIONAL|EXTERNAL|DEFERRED|DISTINCT|FUNCTION|SUBQUERY|TRANSFER|PASSWORD|MEASURES|RESOURCE|SEQUENCE|CONSUMER|RESTRICT|CONFLICT|EVALUATE|DESCRIBE|CALLABLE|INHERITS|GROUPING|ROLLBACK|BETWEEN|COLUMNS|COLLATE|INSTEAD|AUTOMAP|NOLOGIN|DECIMAL|PROCESS|CONNECT|DEFAULT|REINDEX|PERMUTE|CURRENT|TRIGGER|DECLARE|CASCADE|REPLACE|SECONDS|DISCARD|NOTNULL|PASSING|COMPACT|SYMBOLS|NATURAL|RELEASE|ANALYZE|MATCHES|RESTORE|EXPLAIN|PRESORT|WITHOUT|UNKNOWN|BITCAST|WRAPPER|INITIAL|VARIANT|RESTART|EXCLUDE|PRIMARY|VIRTUAL|RESPECT|DISABLE|FLATTEN|PATTERN|INDEXED|FOREIGN|IMPORT|PRAGMA|ISNULL|SCHEMA|REVERT|RENAME|RETURN|ESCAPE|VALUES|OTHERS|ASSUME|ACTION|RESULT|STREAM|DETACH|CREATE|REDUCE|BEFORE|TABLES|DELETE|SYSTEM|SUBSET|EXCEPT|FAMILY|ROLLUP|ATTACH|BACKUP|UPSERT|UPDATE|LEGACY|SAMPLE|TAGGED|VACUUM|REVOKE|MANAGE|SOURCE|GROUPS|GLOBAL|REMOVE|OBJECT|REGEXP|IGNORE|OPTION|EXPORT|FILTER|WINDOW|DEFINE|SELECT|UNIQUE|COLUMN|HAVING|EXISTS|INSERT|STRUCT|MODIFY|COMMIT|OFFSET|WHERE|FIRST|RLIKE|MATCH|LOGIN|GRANT|UNION|RAISE|ERROR|LOCAL|ORDER|USING|RANGE|TABLE|ASYNC|START|AFTER|ERASE|RESET|BATCH|INNER|NULLS|CROSS|TUPLE|FALSE|TOPIC|QUERY|EMPTY|ALTER|COVER|ILIKE|CHECK|GROUP|QUEUE|RIGHT|ABORT|INDEX|OWNER|OUTER|ARRAY|BEGIN|LIMIT|HASH|PLAN|SETS|OMIT|GLOB|ELSE|CUBE|ENUM|OVER|ANSI|SEEK|DESC|SYNC|DATA|WHEN|SEMI|EACH|USER|THEN|LEFT|CAST|FLOW|VIEW|FAIL|ONLY|FROM|JOIN|TIES|TEMP|TRUE|WITH|LIST|ROWS|LIKE|LAST|DICT|NEXT|POOL|DROP|SHOW|INTO|CASE|FULL|PAST|TYPE|SKIP|NULL|PER|NOT|AND|ASC|SET|USE|ONE|HOP|KEY|END|ROW|XOR|ALL|FOR|ADD|ANY|TO|IN|IF|AT|ON|BY|AS|OR|DO|IS|OF|NO)\\b",
+        "keyword"
+      ],
+      ["(\\`(\\\\(.|\\n)|\\`\\`|[^`\\\\])*\\`)", "string.tablepath"],
+      ["(\\$([a-z]|[A-Z]|_)([a-z]|[A-Z]|_|[0-9])*)", "variable"],
+      ["\\b(([a-z]|[A-Z]|_)([a-z]|[A-Z]|_|[0-9])*)\\b", "identifier"],
+      [
+        "\\b((([0-9]+)\\.[0-9]*([eE](\\+|\\-)?([0-9]+))?|([0-9]+)([eE](\\+|\\-)?([0-9]+)))([fF]|[pP]([fF](4|8)|[nN])?)?)\\b",
+        "number"
+      ],
+      [
+        "\\b(((0[xX]([0-9]|[a-f]|[A-F])+)|(0[oO][0-8]+)|(0[bB](0|1)+)|([0-9]+))(([pP]|[uU])?([lL]|[sS]|[tT]|[iI]|[bB]|[nN])?))\\b",
+        "number"
+      ],
+      ["\\b((0[xX]([0-9]|[a-f]|[A-F])+)|(0[oO][0-8]+)|(0[bB](0|1)+)|([0-9]+))\\b", "number"],
+      [
+        "(((((\\\u0027([^\u0027\\\\]|(\\\\(.|\\n)))*\\\u0027))|((\\\"([^\"\\\\]|(\\\\(.|\\n)))*\\\"))|((\\@\\@(.|\\n)*?\\@\\@)+\\@?))([sS]|[uU]|[yY]|[jJ]|[pP]([tT]|[bB]|[vV])?)?))",
+        "string"
+      ]
+    ],
+    "whitespace": [
+      ["(( |\\r|\\t|\\f|\\n))", "white"],
+      ["\\\/\\*", "comment", "@comment"],
+      ["\\@\\@", "string", "@stringLiteral"]
+    ],
+    "comment": [
+      ["[^\\\/\\*]", "comment"],
+      ["\\*\\\/", "comment", "@pop"],
+      ["\\\/\\*", "comment"]
+    ],
+    "stringLiteral": [
+      [
+        "#py",
+        {
+          "nextEmbedded": "python",
+          "goBack": 3,
+          "next": "@embedded",
+          "token": "string.python"
+        }
+      ],
+      [
+        "\\\/\\\/js",
+        {
+          "nextEmbedded": "javascript",
+          "goBack": 4,
+          "next": "@embedded",
+          "token": "string.js"
+        }
+      ],
+      ["[^\\@\\@]", "string"],
+      ["\\@\\@", "string", "@pop"],
+      ["\\@\\@", "string"]
+    ],
+    "embedded": [
+      [
+        "([^@]|^)([@]{4})*[@]{2}([@]([^@]|$)|[^@]|$)",
+        {
+          "nextEmbedded": "@pop",
+          "next": "@pop",
+          "token": "@rematch"
+        }
+      ]
+    ]
+  }
+}

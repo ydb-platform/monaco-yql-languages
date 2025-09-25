@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.12.1...v1.13.0) (2025-09-25)
+
+
+### Features
+
+* add yql and yqls monarch configurations ([#58](https://github.com/ydb-platform/monaco-yql-languages/issues/58)) ([a16e80a](https://github.com/ydb-platform/monaco-yql-languages/commit/a16e80a47f60af831b7e2b93d11eff656a8f4279))
+
 ## [1.12.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.12.0...v1.12.1) (2025-08-12)
 
 

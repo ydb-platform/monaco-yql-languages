@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.13.0...v1.14.0) (2025-09-26)
+
+
+### Features
+
+* add s-expression monarch grammar ([#60](https://github.com/ydb-platform/monaco-yql-languages/issues/60)) ([d1bf745](https://github.com/ydb-platform/monaco-yql-languages/commit/d1bf7457633ae0f05b15eb990b6ffd64f819fd9a))
+
 ## [1.13.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.12.1...v1.13.0) (2025-09-25)
 
 

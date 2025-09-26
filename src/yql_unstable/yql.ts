@@ -1,7 +1,7 @@
 import type {languages} from '../fillers/monaco-editor-core';
 
 import {tokenizer} from './YQL.monarch.json';
-import {tokenizer as tokenizerAnsi} from './YQLs.monarch.json';
+import {tokenizer as tokenizerAnsi} from './YQLansi.monarch.json';
 
 export const conf: languages.LanguageConfiguration = {
     comments: {

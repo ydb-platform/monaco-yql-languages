@@ -6,7 +6,7 @@
       },
       ["(#.*)", "comment"],
       [
-        "(set_package_version|override_library|declare|library|package|return|lambda|import|export|quote|block|let)",
+        "(set_package_version|override_library|package|library|declare|return|lambda|import|export|quote|block|let)",
         "keyword"
       ],
       ["\\b(world)\\b", "variable"],
@@ -43,7 +43,7 @@
       ],
       ["[^\\@\\@]", "string"],
       ["\\@\\@", "string", "@pop"],
-      ["[\\@\\@]", "string"]
+      ["\\@\\@", "string"]
     ],
     "embedded": [
       [

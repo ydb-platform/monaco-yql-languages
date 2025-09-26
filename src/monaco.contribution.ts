@@ -6,5 +6,7 @@ import './yql/yql_ansi.contribution';
 import './yql/yql.keywords';
 import './yql_unstable/yql.contribution';
 import './yql_unstable/YQL.monarch.json';
-import './yql_unstable/YQLs.monarch.json';
+import './yql_unstable/YQLansi.monarch.json';
 import './yql_unstable/yql_ansi.contribution';
+import './s-expressions_unstable/s-expressions.contribution';
+import './s-expressions_unstable/YQLs.monarch.json';

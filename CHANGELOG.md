@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.14.0...v1.15.0) (2025-09-29)
+
+
+### Features
+
+* update unstable configs ([#62](https://github.com/ydb-platform/monaco-yql-languages/issues/62)) ([b378b5c](https://github.com/ydb-platform/monaco-yql-languages/commit/b378b5c1eccc4a9b0fb2ef5e9dc87f4b6c36240f))
+
 ## [1.14.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.13.0...v1.14.0) (2025-09-26)
 
 

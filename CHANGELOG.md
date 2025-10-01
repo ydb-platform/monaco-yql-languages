@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.15.0...v1.16.0) (2025-10-01)
+
+
+### Features
+
+* **YQL:** add textmate grammar ([#64](https://github.com/ydb-platform/monaco-yql-languages/issues/64)) ([bca71e9](https://github.com/ydb-platform/monaco-yql-languages/commit/bca71e9dedbf7d770c1bf288d63dcccdb3522b55))
+
 ## [1.15.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.14.0...v1.15.0) (2025-09-29)
 
 

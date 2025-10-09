@@ -1,7 +1,7 @@
 import type {languages} from '../fillers/monaco-editor-core';
 
-import {tokenizer} from './YQL.monarch.json';
-import {tokenizer as tokenizerAnsi} from './YQLansi.monarch.json';
+import YQLMonarch from './YQL.monarch.json';
+import YQLAnsiMonarch from './YQLansi.monarch.json';
 
 export const conf: languages.LanguageConfiguration = {
     comments: {
@@ -75,6 +75,8 @@ export function getLanguage({ansi = false}: LanguageOptions = {}): languages.IMo
         symbols: /[=><!~?:&|+\-*/^%]+/,
         escapes: /\\(?:[abfnrtv\\"'`]|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})/,
         variables: /[a-zA-Z_]\w*/,
-        tokenizer: (ansi ? tokenizerAnsi : tokenizer) as languages.IMonarchLanguage['tokenizer'],
+        tokenizer: (ansi
+            ? YQLAnsiMonarch.tokenizer
+            : YQLMonarch.tokenizer) as languages.IMonarchLanguage['tokenizer'],
     };
 }

@@ -1,10 +1,12 @@
 {
+  "ignoreCase": true,
   "tokenizer": {
     "root": [
       {
         "include": "@whitespace"
       },
       ["(((\\\/\\*(.|\\n)*?\\*\\\/)|(\\-\\-[^\\n\\r]*(\\r\\n?|\\n|$))))", "comment"],
+      ["\\b(([a-zA-Z_])([a-zA-Z_0-9])*)(?= ?\\=)\\b", "constant"],
       ["\\b(([a-zA-Z_])([a-zA-Z_0-9])*\\:\\:([a-zA-Z_])([a-zA-Z_0-9])*)\\b", "support.function"],
       ["\\b(([a-zA-Z_])([a-zA-Z_0-9])*)(?=\\()\\b", "support.function"],
       ["\\b(([a-zA-Z_])([a-zA-Z_0-9])*)(?=\\\u003C)\\b", "keyword.type"],
@@ -12,13 +14,6 @@
         "\\b(pgpg_brin_minmax_multi_summary|pganycompatiblemultirange|pgpg_brin_bloom_summary|pganycompatiblenonarray|pganycompatiblerange|pganycompatiblearray|pgtable_am_handler|pglanguage_handler|pgindex_am_handler|pgpg_dependencies|_pgtstzmultirange|_pgint8multirange|_pgint4multirange|_pgdatemultirange|pgtstzmultirange|pgpg_ddl_command|pgint8multirange|pgint4multirange|pgdatemultirange|_pgtxid_snapshot|_pgregdictionary|_pgnummultirange|pgtxid_snapshot|pgregdictionary|pgnummultirange|pgevent_trigger|pganymultirange|pganycompatible|_pgtsmultirange|_pgregprocedure|_pgregnamespace|_pgregcollation|_pgpg_attribute|pgtsmultirange|pgregprocedure|pgregnamespace|pgregcollation|pgpg_node_tree|pgpg_ndistinct|pgpg_attribute|_pgtimestamptz|_pgregoperator|_pgpg_snapshot|pgtsm_handler|pgtimestamptz|pgregoperator|pgpg_snapshot|pgpg_mcv_list|pgfdw_handler|pganynonarray|_pgint2vector|TzTimestamp64|pgint2vector|pganyelement|_pgtstzrange|_pgtimestamp|_pgregconfig|_pgrefcursor|_pgoidvector|_pgint8range|_pgint4range|_pggtsvector|_pgdaterange|TzDatetime64|JsonDocument|pgtstzrange|pgtimestamp|pgregconfig|pgrefcursor|pgoidvector|pgint8range|pgint4range|pggtsvector|pgdaterange|_pgtsvector|_pgregclass|_pgpg_class|_pgnumrange|_pgmacaddr8|_pgjsonpath|_pginterval|TzTimestamp|Timestamp64|pgtsvector|pgregclass|pgpg_class|pgnumrange|pgmacaddr8|pgjsonpath|pginterval|pginternal|pganyrange|pganyarray|_pgvarchar|_pgtsrange|_pgtsquery|_pgregtype|_pgregrole|_pgregproc|_pgregoper|_pgpolygon|_pgpg_type|_pgpg_proc|_pgnumeric|_pgmacaddr|_pgcstring|_pgaclitem|TzDatetime|Interval64|Datetime64|pgvarchar|pgunknown|pgtsrange|pgtsquery|pgtrigger|pgregtype|pgregrole|pgregproc|pgregoper|pgpolygon|pgpg_type|pgpg_proc|pgnumeric|pgmacaddr|pgcstring|pganyenum|pgaclitem|_pgvarbit|_pgtimetz|_pgrecord|_pgpg_lsn|_pgfloat8|_pgfloat4|_pgcircle|_pgbpchar|Timestamp|EmptyList|EmptyDict|pgvarbit|pgtimetz|pgrecord|pgpg_lsn|pgfloat8|pgfloat4|pgcircle|pgbpchar|_pgpoint|_pgmoney|_pgjsonb|_pgbytea|TzDate32|Interval|DyNumber|Datetime|pgpoint|pgmoney|pgjsonb|pgbytea|_pgxid8|_pguuid|_pgtime|_pgtext|_pgpath|_pgname|_pglseg|_pgline|_pgjson|_pgint8|_pgint4|_pgint2|_pginet|_pgdate|_pgcidr|_pgchar|_pgbool|Generic|pgxid8|pgvoid|pguuid|pgtime|pgtext|pgpath|pgname|pglseg|pgline|pgjson|pgint8|pgint4|pgint2|pginet|pgdate|pgcidr|pgchar|pgbool|_pgxml|_pgxid|_pgtid|_pgoid|_pgcid|_pgbox|_pgbit|Uint64|Uint32|Uint16|TzDate|String|Double|Date32|pgxml|pgxid|pgtid|pgoid|pgcid|pgbox|pgbit|pgany|Uint8|Int64|Int32|Int16|Float|Yson|Void|Uuid|Utf8|Unit|Json|Int8|Date|Bool)\\b",
         "keyword.type"
       ],
-      [
-        "\\b(CURRENT_TIMESTAMP|MATCH_RECOGNIZE|UNCONDITIONAL|AUTOINCREMENT|MILLISECONDS|MICROSECONDS|EMPTY_ACTION|CURRENT_TIME|CURRENT_DATE|TRANSACTION|TABLESAMPLE|REPLICATION|NANOSECONDS|JSON_EXISTS|INCREMENTAL|CONDITIONAL|TABLESTORE|REPEATABLE|REFERENCES|PRIVILEGES|JSON_VALUE|JSON_QUERY|DEFERRABLE|CONSTRAINT|COLLECTION|CLASSIFIER|CHANGEFEED|ATTRIBUTES|ASYMMETRIC|WATERMARK|UNMATCHED|UNBOUNDED|TEMPORARY|SYMMETRIC|STREAMING|SAVEPOINT|RETURNING|PRECEDING|PARTITION|INTERSECT|INITIALLY|INCREMENT|IMMEDIATE|FOLLOWING|EXCLUSIVE|EXCLUSION|ENCRYPTED|DIRECTORY|BERNOULLI|TRANSFER|SUBQUERY|SEQUENCE|ROLLBACK|RESTRICT|RESOURCE|PASSWORD|PARALLEL|OPTIONAL|MEASURES|INHERITS|GROUPING|FUNCTION|EXTERNAL|EVALUATE|DISTINCT|DESCRIBE|DEFERRED|DATABASE|CONSUMER|CONFLICT|CALLABLE|WRAPPER|WITHOUT|VIRTUAL|VARIANT|UNKNOWN|TRIGGER|SYMBOLS|SECONDS|RESTORE|RESTART|RESPECT|REPLACE|RELEASE|REINDEX|PROCESS|PRIMARY|PRESORT|PERMUTE|PATTERN|PASSING|NOTNULL|NOLOGIN|NATURAL|MATCHES|INSTEAD|INITIAL|INDEXED|FOREIGN|FLATTEN|EXPLAIN|EXCLUDE|DISCARD|DISABLE|DEFAULT|DECLARE|DECIMAL|CURRENT|CONNECT|COMPACT|COLUMNS|COLLATE|CASCADE|BITCAST|BETWEEN|AUTOMAP|ANALYZE|WINDOW|VALUES|VACUUM|UPSERT|UPDATE|UNIQUE|TAGGED|TABLES|SYSTEM|SUBSET|STRUCT|STREAM|SOURCE|SELECT|SECRET|SCHEMA|SAMPLE|ROLLUP|REVOKE|REVERT|RETURN|RESULT|RENAME|REMOVE|REGEXP|REDUCE|PRAGMA|OTHERS|OPTION|OFFSET|OBJECT|MODIFY|MANAGE|LEGACY|ISNULL|INSERT|IMPORT|IGNORE|HAVING|GROUPS|GLOBAL|FILTER|FAMILY|EXPORT|EXISTS|EXCEPT|ESCAPE|DETACH|DELETE|DEFINE|CREATE|COMMIT|COLUMN|BEFORE|BACKUP|ATTACH|ASSUME|ACTION|WHERE|USING|UNION|TUPLE|TOPIC|TABLE|START|RLIKE|RIGHT|RESET|RANGE|RAISE|QUEUE|QUERY|OWNER|OUTER|ORDER|NULLS|MATCH|LOGIN|LOCAL|LIMIT|INNER|INDEX|ILIKE|GROUP|GRANT|FIRST|FALSE|ERROR|ERASE|EMPTY|CROSS|COVER|CHECK|BEGIN|BATCH|ASYNC|ARRAY|ALTER|AFTER|ABORT|WITH|WHEN|VIEW|USER|TYPE|TRUE|TIES|THEN|TEMP|SYNC|SKIP|SHOW|SETS|SEMI|SEEK|ROWS|POOL|PLAN|PAST|OVER|ONLY|OMIT|NULL|NEXT|LIST|LIKE|LEFT|LAST|JOIN|INTO|HASH|GLOB|FULL|FROM|FLOW|FAIL|ENUM|ELSE|EACH|DROP|DICT|DESC|DATA|CUBE|CAST|CASE|ANSI|XOR|USE|SET|ROW|PER|ONE|NOT|KEY|HOP|FOR|END|ASC|ANY|AND|ALL|ADD|TO|OR|ON|OF|NO|IS|IN|IF|DO|BY|AT|AS)\\b",
-        "keyword"
-      ],
-      ["(\\`(\\\\(.|\\n)|\\`\\`|[^`\\\\])*\\`)", "string.tablepath"],
-      ["(\\$([a-zA-Z_])([a-zA-Z_0-9])*)", "variable"],
-      ["\\b(([a-zA-Z_])([a-zA-Z_0-9])*)\\b", "identifier"],
       [
         "\\b((([0-9]+)\\.[0-9]*([eE](\\+|\\-)?([0-9]+))?|([0-9]+)([eE](\\+|\\-)?([0-9]+)))([fF]|[pP]([fF](4|8)|[nN])?)?)\\b",
         "number"
@@ -28,6 +23,16 @@
         "number"
       ],
       ["\\b((0[xX]([0-9a-fA-F])+)|(0[oO][0-8]+)|(0[bB](0|1)+)|([0-9]+))\\b", "number"],
+      ["\\b(TRUE)\\b", "number"],
+      ["\\b(FALSE)\\b", "number"],
+      [
+        "\\b(CURRENT_TIMESTAMP|MATCH_RECOGNIZE|UNCONDITIONAL|AUTOINCREMENT|MILLISECONDS|MICROSECONDS|EMPTY_ACTION|CURRENT_TIME|CURRENT_DATE|TRANSACTION|TABLESAMPLE|REPLICATION|NANOSECONDS|JSON_EXISTS|INCREMENTAL|CONDITIONAL|TABLESTORE|REPEATABLE|REFERENCES|PRIVILEGES|JSON_VALUE|JSON_QUERY|DEFERRABLE|CONSTRAINT|COLLECTION|CLASSIFIER|CHANGEFEED|ATTRIBUTES|ASYMMETRIC|WATERMARK|UNMATCHED|UNBOUNDED|TEMPORARY|SYMMETRIC|STREAMING|SAVEPOINT|RETURNING|PRECEDING|PARTITION|INTERSECT|INITIALLY|INCREMENT|IMMEDIATE|FOLLOWING|EXCLUSIVE|EXCLUSION|ENCRYPTED|DIRECTORY|BERNOULLI|TRANSFER|SUBQUERY|SEQUENCE|ROLLBACK|RESTRICT|RESOURCE|PASSWORD|PARALLEL|OPTIONAL|MEASURES|INHERITS|GROUPING|FUNCTION|EXTERNAL|EVALUATE|DISTINCT|DESCRIBE|DEFERRED|DATABASE|CONSUMER|CONFLICT|CALLABLE|WRAPPER|WITHOUT|VIRTUAL|VARIANT|UNKNOWN|TRIGGER|SYMBOLS|SECONDS|RESTORE|RESTART|RESPECT|REPLACE|RELEASE|REINDEX|PROCESS|PRIMARY|PRESORT|PERMUTE|PATTERN|PASSING|NOTNULL|NOLOGIN|NATURAL|MATCHES|INSTEAD|INITIAL|INDEXED|FOREIGN|FLATTEN|EXPLAIN|EXCLUDE|DISCARD|DISABLE|DEFAULT|DECLARE|DECIMAL|CURRENT|CONNECT|COMPACT|COLUMNS|COLLATE|CASCADE|BITCAST|BETWEEN|AUTOMAP|ANALYZE|WINDOW|VALUES|VACUUM|UPSERT|UPDATE|UNIQUE|TAGGED|TABLES|SYSTEM|SUBSET|STRUCT|STREAM|SOURCE|SELECT|SECRET|SCHEMA|SAMPLE|ROLLUP|REVOKE|REVERT|RETURN|RESULT|RENAME|REMOVE|REGEXP|REDUCE|PRAGMA|OTHERS|OPTION|OFFSET|OBJECT|MODIFY|MANAGE|LEGACY|ISNULL|INSERT|IMPORT|IGNORE|HAVING|GROUPS|GLOBAL|FILTER|FAMILY|EXPORT|EXISTS|EXCEPT|ESCAPE|DETACH|DELETE|DEFINE|CREATE|COMMIT|COLUMN|BEFORE|BACKUP|ATTACH|ASSUME|ACTION|WHERE|USING|UNION|TUPLE|TOPIC|TABLE|START|RLIKE|RIGHT|RESET|RANGE|RAISE|QUEUE|QUERY|OWNER|OUTER|ORDER|NULLS|MATCH|LOGIN|LOCAL|LIMIT|INNER|INDEX|ILIKE|GROUP|GRANT|FIRST|FALSE|ERROR|ERASE|EMPTY|CROSS|COVER|CHECK|BEGIN|BATCH|ASYNC|ARRAY|ALTER|AFTER|ABORT|WITH|WHEN|VIEW|USER|TYPE|TRUE|TIES|THEN|TEMP|SYNC|SKIP|SHOW|SETS|SEMI|SEEK|ROWS|POOL|PLAN|PAST|OVER|ONLY|OMIT|NULL|NEXT|LIST|LIKE|LEFT|LAST|JOIN|INTO|HASH|GLOB|FULL|FROM|FLOW|FAIL|ENUM|ELSE|EACH|DROP|DICT|DESC|DATA|CUBE|CAST|CASE|ANSI|XOR|USE|SET|ROW|PER|ONE|NOT|KEY|HOP|FOR|END|ASC|ANY|AND|ALL|ADD|TO|OR|ON|OF|NO|IS|IN|IF|DO|BY|AT|AS)\\b",
+        "keyword"
+      ],
+      ["(\\`(\\\\(.|\\n)|\\`\\`|[^`\\\\])*\\`)", "string.tablepath"],
+      ["(\\@([a-zA-Z_])([a-zA-Z_0-9])*)", "string.tablepath"],
+      ["(\\$([a-zA-Z_])([a-zA-Z_0-9])*)", "variable"],
+      ["\\b(([a-zA-Z_])([a-zA-Z_0-9])*)\\b", "identifier"],
       [
         "(((((\\\u0027([^\u0027\\\\]|(\\\\(.|\\n)))*\\\u0027))|((\\\"([^\"\\\\]|(\\\\(.|\\n)))*\\\"))|((\\@\\@(.|\\n)*?\\@\\@)+\\@?))([sSuUyYjJ]|[pP]([tTbBvV])?)?))",
         "string"
@@ -36,7 +41,9 @@
     "whitespace": [
       ["(( |\\r|\\t|\\f|\\n))", "white"],
       ["\\\/\\*", "comment", "@comment"],
-      ["\\@\\@", "string", "@stringLiteral"]
+      ["\\@\\@", "string", "@stringLiteral"],
+      ["PRAGMA( |\\r|\\t|\\f|\\n)", "keyword", "@optionIdentifier1"],
+      ["WITH( |\\r|\\t|\\f|\\n)", "keyword", "@optionIdentifier2"]
     ],
     "comment": [
       ["[^\\\/\\*]", "comment"],
@@ -62,6 +69,15 @@
           "token": "string.js"
         }
       ],
+      [
+        "{",
+        {
+          "nextEmbedded": "json",
+          "goBack": 1,
+          "next": "@embedded",
+          "token": "string.json"
+        }
+      ],
       ["[^\\@\\@]", "string"],
       ["\\@\\@", "string", "@pop"],
       ["\\@\\@", "string"]
@@ -75,6 +91,10 @@
           "token": "@rematch"
         }
       ]
-    ]
+    ],
+    "optionIdentifier1": [
+      ["(([a-zA-Z_])([a-zA-Z_0-9])*(\\.([a-zA-Z_])([a-zA-Z_0-9])*)?)", "constant", "@pop"]
+    ],
+    "optionIdentifier2": [["(([a-zA-Z_])([a-zA-Z_0-9])*)", "constant", "@pop"]]
   }
 }

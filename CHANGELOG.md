@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.16.0...v1.17.0) (2025-10-09)
+
+
+### Features
+
+* update unstable grammar ([#66](https://github.com/ydb-platform/monaco-yql-languages/issues/66)) ([374d734](https://github.com/ydb-platform/monaco-yql-languages/commit/374d734fe1b721045c4f28594855c7e96a725aff))
+
 ## [1.16.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.15.0...v1.16.0) (2025-10-01)
 
 

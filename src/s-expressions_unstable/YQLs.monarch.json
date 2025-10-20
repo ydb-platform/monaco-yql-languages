@@ -1,17 +1,12 @@
 {
+  "ignoreCase": false,
   "tokenizer": {
     "root": [
       {
         "include": "@whitespace"
       },
       ["(#.*)", "comment"],
-      [
-        "(set_package_version|override_library|package|library|declare|return|lambda|import|export|quote|block|let)",
-        "keyword"
-      ],
       ["\\b(world)\\b", "variable"],
-      ["([A-Za-z_\\-0-9]+!)", "string.tablepath"],
-      ["([A-Z][A-Za-z_\\-0-9]*)", "support.function"],
       ["(\u0027[A-Za-z_\\-0-9]+\\.[A-Za-z_\\-0-9]+)", "support.function"],
       ["(\u0027[A-Za-z_\\-0-9]+)", "number"],
       ["\\b([a-z_0-9][A-Za-z_\\-0-9]*)\\b", "identifier"],
@@ -20,7 +15,10 @@
     ],
     "whitespace": [
       ["(\\s+)", "white"],
-      ["\\@\\@", "string", "@stringLiteral"]
+      ["\\@\\@", "string", "@stringLiteral"],
+      ["\\(", "keyword", "@keyword1"],
+      ["\\(", "keyword", "@quotedIdentifier1"],
+      ["\\(", "keyword", "@functionIdentifier1"]
     ],
     "stringLiteral": [
       [
@@ -41,6 +39,15 @@
           "token": "string.js"
         }
       ],
+      [
+        "{",
+        {
+          "nextEmbedded": "json",
+          "goBack": 1,
+          "next": "@embedded",
+          "token": "string.json"
+        }
+      ],
       ["[^\\@\\@]", "string"],
       ["\\@\\@", "string", "@pop"],
       ["\\@\\@", "string"]
@@ -54,6 +61,15 @@
           "token": "@rematch"
         }
       ]
-    ]
+    ],
+    "keyword1": [
+      [
+        "(set_package_version|override_library|package|library|declare|return|lambda|import|export|quote|block|let)",
+        "keyword",
+        "@pop"
+      ]
+    ],
+    "quotedIdentifier1": [["([A-Za-z_\\-0-9]+!)", "string.tablepath", "@pop"]],
+    "functionIdentifier1": [["([A-Z][A-Za-z_\\-0-9]*)", "support.function", "@pop"]]
   }
 }

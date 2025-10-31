@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.19.0...v1.19.1) (2025-10-31)
+
+
+### Bug Fixes
+
+* clickhouse highlight ([#73](https://github.com/ydb-platform/monaco-yql-languages/issues/73)) ([c079a1f](https://github.com/ydb-platform/monaco-yql-languages/commit/c079a1f0e3d9ef5986970af4853d3573974b602f))
+
 ## [1.19.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.18.0...v1.19.0) (2025-10-21)
 
 

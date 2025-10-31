@@ -172,6 +172,7 @@ export const language: languages.IMonarchLanguage & Record<string, unknown> = {
             [/./, 'comment'],
         ],
         cppComment: [
+            [/\/\*/, {token: 'comment.quote', next: '@cppComment'}],
             [/[^*/]+/, 'comment'],
             [/\*\//, {token: 'comment.quote', next: '@pop'}],
             [/./, 'comment'],

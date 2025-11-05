@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.19.1...v1.20.0) (2025-11-05)
+
+
+### Features
+
+* update unstable monarch highlight ([#75](https://github.com/ydb-platform/monaco-yql-languages/issues/75)) ([8d64006](https://github.com/ydb-platform/monaco-yql-languages/commit/8d640069b788b06881854304d425f13d7f5ef394))
+
 ## [1.19.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.19.0...v1.19.1) (2025-10-31)
 
 

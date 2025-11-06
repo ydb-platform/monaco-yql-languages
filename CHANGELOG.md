@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.21.0...v1.21.1) (2025-11-06)
+
+
+### Bug Fixes
+
+* **s-expressions:** use default export for json ([#79](https://github.com/ydb-platform/monaco-yql-languages/issues/79)) ([1f459fa](https://github.com/ydb-platform/monaco-yql-languages/commit/1f459fa237355cb0c3c1ec7df91f369412590fbb))
+
 ## [1.21.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.20.0...v1.21.0) (2025-11-06)
 
 

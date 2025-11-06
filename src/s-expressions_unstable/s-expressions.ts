@@ -1,6 +1,6 @@
 import {languages} from '../fillers/monaco-editor-core';
 
-import {tokenizer} from './YQLs.monarch.json';
+import YQLsMonarch from './YQLs.monarch.json';
 
 export const LANGUAGE_ID = 's-expressions';
 
@@ -38,5 +38,5 @@ export const language: languages.IMonarchLanguage & Record<string, unknown> = {
 
     escapes: /\\(?:[abfnrtv\\"']|x[0-9A-Fa-f]{1,4}|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})/,
 
-    tokenizer: tokenizer as languages.IMonarchLanguage['tokenizer'],
+    tokenizer: YQLsMonarch.tokenizer as languages.IMonarchLanguage['tokenizer'],
 };

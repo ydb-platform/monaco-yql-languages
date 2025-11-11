@@ -35,7 +35,7 @@
     "beforable": [],
     "stringLiteral\"": [
       [
-        "#py",
+        "\\#py",
         {
           "nextEmbedded": "python",
           "goBack": 3,
@@ -48,15 +48,6 @@
         {
           "nextEmbedded": "javascript",
           "goBack": 4,
-          "next": "@embedded",
-          "token": "string.js"
-        }
-      ],
-      [
-        "{",
-        {
-          "nextEmbedded": "javascript",
-          "goBack": 1,
           "next": "@embedded",
           "token": "string.js"
         }
@@ -68,7 +59,7 @@
     ],
     "stringLiteral@@": [
       [
-        "#py",
+        "\\#py",
         {
           "nextEmbedded": "python",
           "goBack": 3,
@@ -81,15 +72,6 @@
         {
           "nextEmbedded": "javascript",
           "goBack": 4,
-          "next": "@embedded",
-          "token": "string.js"
-        }
-      ],
-      [
-        "{",
-        {
-          "nextEmbedded": "javascript",
-          "goBack": 1,
           "next": "@embedded",
           "token": "string.js"
         }

@@ -1,10 +1,12 @@
 import './clickhouse/clickhouse.contribution';
 import './s-expressions/s-expressions.contribution';
+import './s-expressions/YQLs.tmLanguage.json';
 import './themes/themes.contribution';
 import './yql/yql.contribution';
 import './yql/yql_ansi.contribution';
 import './yql/yql.keywords';
 import './yql/YQL.tmLanguage.json';
+import './yql/YQL.ansi.tmLanguage.json';
 import './yql_unstable/yql.contribution';
 import './yql_unstable/YQL.monarch.json';
 import './yql_unstable/YQLansi.monarch.json';

@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.22.0...v2.0.0) (2025-11-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* ustable higlight -> stable ([#83](https://github.com/ydb-platform/monaco-yql-languages/issues/83))
+
+### Features
+
+* ustable higlight -&gt; stable ([#83](https://github.com/ydb-platform/monaco-yql-languages/issues/83)) ([e457564](https://github.com/ydb-platform/monaco-yql-languages/commit/e457564239a7fbdf060e488c2c01bfc5cccbf960))
+
 ## [1.22.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.21.1...v1.22.0) (2025-11-11)
 
 

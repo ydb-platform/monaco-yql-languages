@@ -2,8 +2,6 @@ import {languages} from '../fillers/monaco-editor-core';
 
 import YQLsMonarch from './YQLs.monarch.json';
 
-export const LANGUAGE_ID = 's-expressions';
-
 export const conf: languages.LanguageConfiguration = {
     comments: {
         lineComment: '#',

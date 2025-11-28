@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.0.0...v2.0.1) (2025-11-28)
+
+
+### Bug Fixes
+
+* remove unused variable ([#85](https://github.com/ydb-platform/monaco-yql-languages/issues/85)) ([fec04a5](https://github.com/ydb-platform/monaco-yql-languages/commit/fec04a5a875c32576fde93db5fcb55bd09052b30))
+
 ## [2.0.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v1.22.0...v2.0.0) (2025-11-25)
 
 

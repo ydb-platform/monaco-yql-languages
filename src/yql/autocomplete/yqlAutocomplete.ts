@@ -128,8 +128,8 @@ export class YQLAutocomplete {
         let simpleTypesSuggestions: Monaco.languages.CompletionItem[] = [];
         let pragmasSuggestions: Monaco.languages.CompletionItem[] = [];
         let entitySettingsSuggestions: Monaco.languages.CompletionItem[] = [];
-        let columnsSuggestions: Monaco.languages.CompletionItem[] = [];
         let variableSuggestions: Monaco.languages.CompletionItem[] = [];
+        let columnsSuggestions: Monaco.languages.CompletionItem[] = [];
 
         const rangeToInsertSuggestion = getRangeToInsertSuggestion(input, offset);
 

@@ -28,6 +28,7 @@ export const conf: languages.LanguageConfiguration = {
         {open: '"', close: '"'},
         {open: "'", close: "'"},
         {open: '`', close: '`'},
+        {open: '<', close: '>'},
     ],
     wordPattern: /(-?\d*\.\d\w*)|([^`~!@#%^&*()\-=+[{\]}\\|;:'",./?\s]+)/g,
 };

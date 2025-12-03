@@ -12,6 +12,7 @@ export const conf: languages.LanguageConfiguration = {
         ['{', '}'],
         ['[', ']'],
         ['(', ')'],
+        ['<|', '|>'],
     ],
     autoClosingPairs: [
         {open: '{', close: '}'},
@@ -20,6 +21,7 @@ export const conf: languages.LanguageConfiguration = {
         {open: '"', close: '"', notIn: ['string']},
         {open: "'", close: "'", notIn: ['string', 'comment']},
         {open: '`', close: '`', notIn: ['string', 'comment']},
+        {open: '<|', close: '|>', notIn: ['string', 'comment']},
     ],
     surroundingPairs: [
         {open: '{', close: '}'},

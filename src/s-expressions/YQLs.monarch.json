@@ -7,7 +7,7 @@
       },
       ["(#.*)", "comment"],
       [
-        "\\b(set_package_version|override_library|package|library|declare|return|lambda|import|export|quote|block|let)\\b",
+        "\\b(set_package_version|override_library|package|library|declare|return|lambda|import|export|quote|block|bind|let)\\b",
         "keyword"
       ],
       ["\\b(world)\\b", "variable"],

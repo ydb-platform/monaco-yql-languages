@@ -75,7 +75,7 @@
     "keyword1": {
       "patterns": [
         {
-          "match": "\\b(set_package_version|override_library|package|library|declare|return|lambda|import|export|quote|block|let)\\b",
+          "match": "\\b(set_package_version|override_library|package|library|declare|return|lambda|import|export|quote|block|bind|let)\\b",
           "name": "keyword.control"
         }
       ]

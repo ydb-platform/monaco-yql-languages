@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.0.3...v2.1.0) (2025-12-04)
+
+
+### Features
+
+* improve brackets support for the YQL ([#93](https://github.com/ydb-platform/monaco-yql-languages/issues/93)) ([ff7d393](https://github.com/ydb-platform/monaco-yql-languages/commit/ff7d39377a418b8a4ab4fbd672f4241099b095a4))
+* update highlight ([#95](https://github.com/ydb-platform/monaco-yql-languages/issues/95)) ([8dce0bf](https://github.com/ydb-platform/monaco-yql-languages/commit/8dce0bf6429a7d448960d64d16544efcc573f525))
+
 ## [2.0.3](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.0.2...v2.0.3) (2025-12-02)
 
 

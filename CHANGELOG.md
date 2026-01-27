@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.1.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.1.0...v2.1.1) (2026-01-27)
+
+
+### Bug Fixes
+
+* add release-please conf ([#98](https://github.com/ydb-platform/monaco-yql-languages/issues/98)) ([a3a8bf8](https://github.com/ydb-platform/monaco-yql-languages/commit/a3a8bf8a0f9d9d063586fc749eb68fd432461e03))
+* add release-please manifest ([#99](https://github.com/ydb-platform/monaco-yql-languages/issues/99)) ([dc6b2b4](https://github.com/ydb-platform/monaco-yql-languages/commit/dc6b2b48a2e6af15a9d765da8f7f0576cd876c06))
+* workflow ([#96](https://github.com/ydb-platform/monaco-yql-languages/issues/96)) ([b23a1c3](https://github.com/ydb-platform/monaco-yql-languages/commit/b23a1c34a67cbfb4644f11f906c2858ec24453e4))
+* workflow ([#97](https://github.com/ydb-platform/monaco-yql-languages/issues/97)) ([1d878a5](https://github.com/ydb-platform/monaco-yql-languages/commit/1d878a5c80fbf11ab202ff958e02a557cf4e22dc))
+
 ## [2.1.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.0.3...v2.1.0) (2025-12-04)
 
 

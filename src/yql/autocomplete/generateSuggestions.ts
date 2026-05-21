@@ -189,13 +189,47 @@ export async function generateEntitySettingsSuggestion(
     rangeToInsertSuggestion: monaco.IRange,
     entitySettings: string[] = [],
 ): Promise<monaco.languages.CompletionItem[]> {
-    return entitySettings.map((el) => ({
+    return generateSettingsSuggestion(
+        rangeToInsertSuggestion,
+        entitySettings,
+        'suggestEntitySettings',
+    );
+}
+
+export async function generateCompressionSettingsSuggestion(
+    rangeToInsertSuggestion: monaco.IRange,
+    compressionSettings: string[] = [],
+): Promise<monaco.languages.CompletionItem[]> {
+    return generateSettingsSuggestion(
+        rangeToInsertSuggestion,
+        compressionSettings,
+        'suggestCompressionSettings',
+    );
+}
+
+export async function generateEncodingSettingsSuggestion(
+    rangeToInsertSuggestion: monaco.IRange,
+    encodingSettings: string[] = [],
+): Promise<monaco.languages.CompletionItem[]> {
+    return generateSettingsSuggestion(
+        rangeToInsertSuggestion,
+        encodingSettings,
+        'suggestEncodingSettings',
+    );
+}
+
+function generateSettingsSuggestion(
+    rangeToInsertSuggestion: monaco.IRange,
+    settings: string[] = [],
+    suggestionType: Parameters<typeof getSuggestionIndex>[0],
+): monaco.languages.CompletionItem[] {
+    return settings.map((el) => ({
         label: el,
         insertText: el,
         kind: monaco.languages.CompletionItemKind.Property,
         detail: 'Setting',
         range: rangeToInsertSuggestion,
-        sortText: suggestionIndexToWeight(getSuggestionIndex('suggestEntitySettings')),
+        sortText: suggestionIndexToWeight(getSuggestionIndex(suggestionType)),
     }));
 }
 

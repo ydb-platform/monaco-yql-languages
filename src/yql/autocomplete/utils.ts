@@ -15,13 +15,15 @@ const SuggestionsWeight: Record<SuggestionType, number> = {
     suggestTableIndexes: 7,
     suggestTableHints: 8,
     suggestEntitySettings: 9,
-    suggestKeywords: 10,
-    suggestAggregateFunctions: 11,
-    suggestTableFunctions: 12,
-    suggestWindowFunctions: 13,
-    suggestFunctions: 14,
-    suggestSimpleTypes: 15,
-    suggestUdfs: 16,
+    suggestCompressionSettings: 10,
+    suggestEncodingSettings: 11,
+    suggestKeywords: 12,
+    suggestAggregateFunctions: 13,
+    suggestTableFunctions: 14,
+    suggestWindowFunctions: 15,
+    suggestFunctions: 16,
+    suggestSimpleTypes: 17,
+    suggestUdfs: 18,
 };
 
 export function getSuggestionIndex(suggestionType: SuggestionType) {

@@ -31,7 +31,7 @@ function getCursorPosition(input: string, offset: number): CursorPosition {
     };
 }
 
-const prefixRegexp = /([^\s]+)$/;
+const prefixRegexp = /([^\s()]+)$/;
 
 function getCursorPrefix(input: string, offset: number, re = prefixRegexp) {
     const prevText = input.slice(0, offset);
@@ -43,7 +43,7 @@ function getCursorPrefix(input: string, offset: number, re = prefixRegexp) {
     return '';
 }
 
-const prefixToReplaceRegexp = /([^\\/\s`]+)$/;
+const prefixToReplaceRegexp = /([^\\/\s`()]+)$/;
 
 function getRangeToInsertSuggestion(input: string, offset: number) {
     const cursorPosition = getCursorPosition(input, offset);

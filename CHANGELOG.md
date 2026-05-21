@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.1.1...v2.2.0) (2026-05-21)
+
+
+### Features
+
+* @gravity-ui/websql-autocomplete -&gt; 13.15.0 ([#102](https://github.com/ydb-platform/monaco-yql-languages/issues/102)) ([521eba0](https://github.com/ydb-platform/monaco-yql-languages/commit/521eba0df9b3d2895e5eea01a03d1fc5574389e9))
+
 ## [2.1.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.1.0...v2.1.1) (2026-01-27)
 
 

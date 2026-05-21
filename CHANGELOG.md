@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.2.0...v2.2.1) (2026-05-21)
+
+
+### Bug Fixes
+
+* **yqlAutocomplete:** range calculation ([#105](https://github.com/ydb-platform/monaco-yql-languages/issues/105)) ([233233b](https://github.com/ydb-platform/monaco-yql-languages/commit/233233b41dabfb2c84fa00c7d1472f1254811f0b))
+
 ## [2.2.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.1.1...v2.2.0) (2026-05-21)
 
 

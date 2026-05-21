@@ -6,6 +6,8 @@ import {
     generateAggregateFunctionsSuggestion,
     generateColumnAliasesSuggestion,
     generateColumnsSuggestion,
+    generateCompressionSettingsSuggestion,
+    generateEncodingSettingsSuggestion,
     generateEntitiesSuggestion,
     generateEntitySettingsSuggestion,
     generateKeywordsSuggestion,
@@ -64,6 +66,8 @@ export type YQLAutocompleteConfig = {
     getAggregateFunctions?: YQLAutocomplete['getAggregateFunctions'];
     getSimpleFunctions?: YQLAutocomplete['getSimpleFunctions'];
     getEntitySettings?: YQLAutocomplete['getEntitySettings'];
+    getCompressionSettings?: YQLAutocomplete['getCompressionSettings'];
+    getEncodingSettings?: YQLAutocomplete['getEncodingSettings'];
     fetchEntities?: YQLAutocomplete['fetchEntities'];
     fetchEntityColumns?: YQLAutocomplete['fetchEntityColumns'];
 };
@@ -79,6 +83,8 @@ export class YQLAutocomplete {
         getAggregateFunctions,
         getSimpleFunctions,
         getEntitySettings,
+        getCompressionSettings,
+        getEncodingSettings,
         fetchEntities,
         fetchEntityColumns,
     }: YQLAutocompleteConfig) {
@@ -109,6 +115,12 @@ export class YQLAutocomplete {
         if (getEntitySettings) {
             this.getEntitySettings = getEntitySettings;
         }
+        if (getCompressionSettings) {
+            this.getCompressionSettings = getCompressionSettings;
+        }
+        if (getEncodingSettings) {
+            this.getEncodingSettings = getEncodingSettings;
+        }
         if (fetchEntities) {
             this.fetchEntities = fetchEntities;
         }
@@ -128,6 +140,8 @@ export class YQLAutocomplete {
         let simpleTypesSuggestions: Monaco.languages.CompletionItem[] = [];
         let pragmasSuggestions: Monaco.languages.CompletionItem[] = [];
         let entitySettingsSuggestions: Monaco.languages.CompletionItem[] = [];
+        let compressionSettingsSuggestions: Monaco.languages.CompletionItem[] = [];
+        let encodingSettingsSuggestions: Monaco.languages.CompletionItem[] = [];
         let variableSuggestions: Monaco.languages.CompletionItem[] = [];
         let columnsSuggestions: Monaco.languages.CompletionItem[] = [];
 
@@ -205,6 +219,21 @@ export class YQLAutocomplete {
             );
         }
 
+        if (parseResult.suggestCompressionSettings) {
+            const compressionSettings = await this.getCompressionSettings(cursorPrefix);
+            compressionSettingsSuggestions = await generateCompressionSettingsSuggestion(
+                rangeToInsertSuggestion,
+                compressionSettings,
+            );
+        }
+        if (parseResult.suggestEncodingSettings) {
+            const encodingSettings = await this.getEncodingSettings(cursorPrefix);
+            encodingSettingsSuggestions = await generateEncodingSettingsSuggestion(
+                rangeToInsertSuggestion,
+                encodingSettings,
+            );
+        }
+
         const keywordsSuggestions = generateKeywordsSuggestion(
             rangeToInsertSuggestion,
             parseResult.suggestKeywords,
@@ -240,6 +269,8 @@ export class YQLAutocomplete {
             ...keywordsSuggestions,
             ...aggregateFunctionsSuggestions,
             ...entitySettingsSuggestions,
+            ...compressionSettingsSuggestions,
+            ...encodingSettingsSuggestions,
             ...variableSuggestions,
         ];
 
@@ -296,6 +327,22 @@ export class YQLAutocomplete {
     async getEntitySettings(_entityType: YQLEntity): Promise<string[]> {
         return [];
     }
+    /**
+     * Fetches compression settings.
+     * @returns A promise that resolves to an array of compression settings.
+     */
+    async getCompressionSettings(_prefix?: string): Promise<string[]> {
+        return [];
+    }
+
+    /**
+     * Fetches encoding settings.
+     * @returns A promise that resolves to an array of encoding settings.
+     */
+    async getEncodingSettings(_prefix?: string): Promise<string[]> {
+        return [];
+    }
+
     /**
      * Fetches entities based on the provided prefix and needed entity types.
      * @param prefix - The prefix to filter entities.

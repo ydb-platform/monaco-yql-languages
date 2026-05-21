@@ -1,5 +1,10 @@
 import type {FetchedColumn} from '../types';
-import {generateColumnsSuggestion, generateEntitiesSuggestion} from '../generateSuggestions';
+import {
+    generateColumnsSuggestion,
+    generateCompressionSettingsSuggestion,
+    generateEncodingSettingsSuggestion,
+    generateEntitiesSuggestion,
+} from '../generateSuggestions';
 import * as monaco from '../../../fillers/monaco-editor-core';
 
 jest.mock('../../../fillers/monaco-editor-core', () => ({
@@ -352,6 +357,40 @@ describe('generateEntitiesSuggestion', () => {
                 },
                 command: undefined,
                 sortText: 'ab',
+            },
+        ]);
+    });
+});
+
+describe('generateCompressionSettingsSuggestion', () => {
+    it('should generate compression settings suggestions', async () => {
+        const suggestions = await generateCompressionSettingsSuggestion(mockRange, ['gzip']);
+
+        expect(suggestions).toEqual([
+            {
+                label: 'gzip',
+                insertText: 'gzip',
+                kind: undefined,
+                detail: 'Setting',
+                range: mockRange,
+                sortText: 'a',
+            },
+        ]);
+    });
+});
+
+describe('generateEncodingSettingsSuggestion', () => {
+    it('should generate encoding settings suggestions', async () => {
+        const suggestions = await generateEncodingSettingsSuggestion(mockRange, ['utf-8']);
+
+        expect(suggestions).toEqual([
+            {
+                label: 'utf-8',
+                insertText: 'utf-8',
+                kind: undefined,
+                detail: 'Setting',
+                range: mockRange,
+                sortText: 'a',
             },
         ]);
     });

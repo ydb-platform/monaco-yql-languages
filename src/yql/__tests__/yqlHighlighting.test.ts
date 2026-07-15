@@ -10,12 +10,29 @@ type MonarchGrammar = {
     };
 };
 
-type TextMateRule = {
-    match: string;
-    name: string;
+type TextMatePattern = {
+    include?: string;
+    match?: string;
+    name?: string;
 };
 
-const functionCalls = ['CAST(', 'CAST (', 'CAST\t(', 'MIN(', 'MIN ('];
+type TextMateGrammar = {
+    patterns: TextMatePattern[];
+    repository: Record<string, {patterns?: TextMatePattern[]}>;
+};
+
+const functionCalls = ['MIN(', 'MIN (', 'MIN\t('];
+const keywordCalls = [
+    'CAST(',
+    'CAST (',
+    'CAST\t(',
+    'IN(',
+    'IN (',
+    'EXISTS(',
+    'EXISTS (',
+    'SELECT(',
+    'SELECT (',
+];
 const monarchControls = [
     ['value', 'identifier'],
     ['CAST', 'keyword'],
@@ -50,47 +67,46 @@ function getFirstMatchingToken(grammar: MonarchGrammar, input: string) {
     return undefined;
 }
 
-function collectTextMateRules(value: unknown, rules: TextMateRule[] = []) {
-    if (Array.isArray(value)) {
-        value.forEach((item) => collectTextMateRules(item, rules));
-        return rules;
-    }
-
-    if (!value || typeof value !== 'object') {
-        return rules;
-    }
-
-    const record = value as Record<string, unknown>;
-
-    if (typeof record.match === 'string' && typeof record.name === 'string') {
-        rules.push({match: record.match, name: record.name});
-    }
-
-    Object.values(record).forEach((item) => collectTextMateRules(item, rules));
-
-    return rules;
+function getGenericFunctionPatterns(grammar: TextMateGrammar) {
+    return Object.values(grammar.repository)
+        .flatMap(({patterns = []}) => patterns)
+        .filter(
+            ({match, name}) =>
+                typeof match === 'string' &&
+                name === 'entity.name.function' &&
+                match.includes('(?='),
+        )
+        .map(({match}) => match as string);
 }
 
-function getGenericFunctionPatterns(grammar: unknown) {
-    return collectTextMateRules(grammar)
-        .filter(({name}) => name === 'entity.name.function')
-        .map(({match}) => match)
-        .filter((match) => match.includes('(?='));
-}
-
-function createTextMateRegExp(source: string, anchorEnd = false) {
+function createTextMateRegExp(source: string) {
     const ignoreCasePrefix = '(?i)';
     const ignoreCase = source.startsWith(ignoreCasePrefix);
     const normalizedSource = ignoreCase ? source.slice(ignoreCasePrefix.length) : source;
-    const endAnchor = anchorEnd ? '$' : '';
 
-    return new RegExp(`^(?:${normalizedSource})${endAnchor}`, ignoreCase ? 'i' : '');
+    return new RegExp(`^(?:${normalizedSource})`, ignoreCase ? 'i' : '');
 }
 
-function matchesTextMateRule(grammar: unknown, name: string, input: string) {
-    return collectTextMateRules(grammar)
-        .filter((rule) => rule.name === name)
-        .some((rule) => createTextMateRegExp(rule.match, true).test(input));
+function getFirstMatchingTextMateScope(grammar: TextMateGrammar, input: string) {
+    for (const topLevelPattern of grammar.patterns) {
+        const include = topLevelPattern.include;
+        const patterns =
+            include?.startsWith('#') === true
+                ? (grammar.repository[include.slice(1)]?.patterns ?? [])
+                : [topLevelPattern];
+
+        for (const pattern of patterns) {
+            if (
+                typeof pattern.match === 'string' &&
+                typeof pattern.name === 'string' &&
+                createTextMateRegExp(pattern.match).test(input)
+            ) {
+                return pattern.name;
+            }
+        }
+    }
+
+    return undefined;
 }
 
 const monarchGrammars: Array<[string, MonarchGrammar]> = [
@@ -98,14 +114,18 @@ const monarchGrammars: Array<[string, MonarchGrammar]> = [
     ['ANSI', yqlAnsiMonarch],
 ];
 
-const textMateGrammars: Array<[string, unknown]> = [
-    ['default', yqlTextMate],
-    ['ANSI', yqlAnsiTextMate],
+const textMateGrammars: Array<[string, TextMateGrammar]> = [
+    ['default', yqlTextMate as TextMateGrammar],
+    ['ANSI', yqlAnsiTextMate as TextMateGrammar],
 ];
 
 describe.each(monarchGrammars)('%s YQL Monarch grammar', (_name, grammar) => {
     it.each(functionCalls)('classifies %p as a function', (input) => {
         expect(getFirstMatchingToken(grammar, input)).toBe('support.function');
+    });
+
+    it.each(keywordCalls)('classifies %p as a keyword', (input) => {
+        expect(getFirstMatchingToken(grammar, input)).toBe('keyword');
     });
 
     it.each(monarchControls)('classifies %p as %s', (input, expectedToken) => {
@@ -119,13 +139,14 @@ describe.each(textMateGrammars)('%s YQL TextMate grammar', (_name, grammar) => {
     });
 
     it.each(functionCalls)('classifies %p as a function', (input) => {
-        const [functionPattern] = getGenericFunctionPatterns(grammar);
+        expect(getFirstMatchingTextMateScope(grammar, input)).toBe('entity.name.function');
+    });
 
-        expect(createTextMateRegExp(functionPattern).test(input)).toBe(true);
+    it.each(keywordCalls)('classifies %p as a keyword', (input) => {
+        expect(getFirstMatchingTextMateScope(grammar, input)).toBe('keyword.control');
     });
 
     it.each(textMateControls)('classifies %p as %s', (input, expectedScope) => {
-        expect(matchesTextMateRule(grammar, 'entity.name.function', input)).toBe(false);
-        expect(matchesTextMateRule(grammar, expectedScope, input)).toBe(true);
+        expect(getFirstMatchingTextMateScope(grammar, input)).toBe(expectedScope);
     });
 });

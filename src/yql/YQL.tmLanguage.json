@@ -16,13 +16,13 @@
       "include": "#type-identifier4"
     },
     {
-      "include": "#function-identifier5"
-    },
-    {
       "include": "#literal6"
     },
     {
       "include": "#keyword7"
+    },
+    {
+      "include": "#function-identifier5"
     },
     {
       "include": "#quoted-identifier8"

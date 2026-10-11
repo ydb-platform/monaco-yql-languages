@@ -1,6 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "fileTypes": ["yqls"],
+  "fileTypes": [
+    "yqls"
+  ],
   "name": "yqls",
   "patterns": [
     {
@@ -100,7 +102,7 @@
       "patterns": [
         {
           "begin": "\\\"",
-          "end": "\\\"",
+          "end": "\\\"([sSuUyYjJ]|[pP]([tTbBvV])?)?",
           "name": "string.quoted.double",
           "patterns": [
             {
@@ -111,7 +113,7 @@
         },
         {
           "begin": "\\@\\@\\#py",
-          "end": "\\@\\@",
+          "end": "\\@\\@([sSuUyYjJ]|[pP]([tTbBvV])?)?",
           "patterns": [
             {
               "include": "source.python"
@@ -124,7 +126,7 @@
         },
         {
           "begin": "\\@\\@\\/\\/js",
-          "end": "\\@\\@",
+          "end": "\\@\\@([sSuUyYjJ]|[pP]([tTbBvV])?)?",
           "patterns": [
             {
               "include": "source.js"
@@ -137,7 +139,7 @@
         },
         {
           "begin": "\\@\\@",
-          "end": "\\@\\@",
+          "end": "\\@\\@([sSuUyYjJ]|[pP]([tTbBvV])?)?",
           "name": "string.quoted.double",
           "patterns": [
             {

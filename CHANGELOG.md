@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.2.1...v2.3.0) (2026-10-11)
+
+
+### Features
+
+* **yql:** sync YQL highlighting to YQL VSCode v30 [YQL-20297] ([#109](https://github.com/ydb-platform/monaco-yql-languages/issues/109)) ([4557122](https://github.com/ydb-platform/monaco-yql-languages/commit/4557122383f7a43c1beee41f6d307081155983d4))
+
 ## [2.2.1](https://github.com/ydb-platform/monaco-yql-languages/compare/v2.2.0...v2.2.1) (2026-05-21)
 
 
